@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://bit.ly/4bcK1Hc);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background 0.5s ease;
+}
+
+main {
+    background-color: rgba(227, 193, 173, 0.85);
+    border-radius: 10px;
+    min-width: 540px;
+    max-width: 50%;
+    margin: auto;
+    padding: 2em;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    transition: transform 0.3s ease;
+}
+
+main:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#search {
+    flex: 1;          
+    height: 50px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+#submit {
+    width: 120px;      
+    height: 50px;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f8b500;
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#submit:hover {
+    background-color: #ffca28;
+    transform: scale(1.05);
+}
+
+#weather-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#weather-search {
+    display: flex;
+    width: 50%;
+    margin-bottom: 15px;
+    align-items: center;  
+    justify-content: center; 
+}
+
+#weather-data {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(227, 193, 173, 0.85);
+    border-radius: 10px;
+    padding: 1.5em;
+    margin-top: 20px;
+    text-align: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#weather-data.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#weather-data > img {
+    border-radius: 50%;
+    background-color: lightskyblue;
+    padding: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Dynamic colous for temp
+#weather-data p strong {
+    transition: color 0.3s;
+}
+
+/* Background dinamic for temp */
+body.sun {
+    background: linear-gradient(to top, #fceabb, #f8b500);
+}
+body.rain {
+    background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+}
+body.clouds {
+    background: linear-gradient(to top, #d7d2cc, #304352);
+}
